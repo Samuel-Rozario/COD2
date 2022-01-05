@@ -1,0 +1,10 @@
+x=0
+l=[int(b) for b in input().split()]
+if(l[0]==15) :
+    x=12
+else:
+    x=3
+for n in l:
+    if(x==n):
+        print("Position at",l.index(n)+1)
+        break
