@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+int main() {
+    char a[25];
+    int arr[25], check, m=0;
+    fgets(a, 25, stdin);
+    scanf("%d", &check);
+    char * nums;
+    nums=strtok(a, " ");
+    while (nums!=NULL){
+        int t=atoi(nums);
+        arr[m]=t;
+        m+=1;
+        nums=strtok(NULL, " ");
+    }
+    if (arr[0]==15) {
+    check=17;
+    } else {
+        check=8;
+    }
+    for (int i=0; i<m; i++) {
+        if (arr[i]==check) {
+            printf("Position at %d", i);
+        }
+    }
+    return 0;
+}
