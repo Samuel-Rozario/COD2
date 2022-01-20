@@ -1,0 +1,41 @@
+// Binary Search in C
+
+#include <stdio.h>
+
+int binarySearch(int array[], int x, int low, int high) {
+  // Repeat until the pointers low and high meet each other
+  while (low <= high) {
+    int mid = low + (high - low) / 2;
+
+    if (array[mid] == x)
+      return mid;
+
+    if (array[mid] < x)
+      low = mid + 1;
+
+    else
+      high = mid - 1;
+  }
+
+  return -1;
+}
+
+int main(void) {
+    int n;
+    scanf("%d",&n);
+    int array[n];
+    for(int i=0;i<n;i++)
+    {
+    scanf("%d",&array[i]);
+    }
+ 
+  
+  int x;
+  scanf("%d",&x);
+  int result = binarySearch(array, x, 0, n - 1);
+  if (result == -1)
+    printf("%d is not found in the given array",x);
+  else
+    printf("%d is found at the position %d",x, (result+1));
+  return 0;
+}
